@@ -8,13 +8,37 @@ int main(int argc,char *argv[])
     // printf("-v --> view\n");
     // printf("-e --> edit\n");
     // printf("-h --> help\n");
-    if(argc<3)
+    if(argc<2)
     {
         printf("insufficent input\n");
         printf("for view op--> ./a.out -v sample.mp3\n");
         printf("for edit op-->./a.out -e sample.mp3\n");
+        printf("for help--> ./a.out -h\n");
         return 0;
     }
+    
+    if(strcmp(argv[1],"-h")==0)
+    {
+        printf("-t --> tittle\n");
+        printf("-y --> year\n");
+        printf("-a --> artist\n");
+        printf("-A --> album\n");
+        printf("-g --> genre\n");
+        printf("-c --> comment\n");
+        return 0;
+
+    }
+    if(argv[2]==NULL)
+    {
+        printf("insufficent input\n");
+        return 0;
+    }
+    if(strstr(argv[2],".mp3")==NULL)
+    {
+        printf("Invalid file format\n");
+        return 0;
+    }
+
 
     char file_name[100],operation[3];
     // printf("Enter the operation:");
@@ -90,15 +114,5 @@ else if(strcmp(operation,"-e")==0){
     
 
 }
-else if(strcmp(operation,"-h")==0)
-{
-    
-    printf("-t --> tittle\n");
-    printf("-y --> year\n");
-    printf("-a --> artist\n");
-    printf("-A --> album\n");
-    printf("-g --> genre\n");
-    printf("-c --> comment\n");
-}   
     
 }
