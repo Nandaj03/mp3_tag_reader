@@ -2,19 +2,30 @@
 #include<string.h>
 #include<unistd.h>
 #include "header.h"
-int main()
+int main(int argc,char *argv[])
 {
-    printf("-v --> view\n");
-    printf("-e --> edit\n");
-    printf("-h --> help\n");
+
+    // printf("-v --> view\n");
+    // printf("-e --> edit\n");
+    // printf("-h --> help\n");
+    if(argc<3)
+    {
+        printf("insufficent input\n");
+        printf("for view op--> ./a.out -v sample.mp3\n");
+        printf("for edit op-->./a.out -e sample.mp3\n");
+        return 0;
+    }
+
     char file_name[100],operation[3];
-    printf("Enter the operation:");
-    scanf(" %[^\n]",operation);
+    // printf("Enter the operation:");
+    strcpy(operation,argv[1]);
+    // scanf(" %[^\n]",operation);
 
 if(strcmp(operation,"-v")==0)
 {
-        printf("Enter the file name:");
-        scanf(" %[^\n]",file_name);
+        // printf("Enter the file name:");
+        // scanf(" %[^\n]",file_name);
+        strcpy(file_name,argv[2]);
         printf("\n");
         FILE *fp;
         if((fp=fopen(file_name,"r"))==NULL)
@@ -41,8 +52,9 @@ else if(strcmp(operation,"-e")==0){
     printf("Enter the new data:");
     scanf(" %[^\n]",info);
 
-    printf("Enter the file name:");
-    scanf(" %[^\n]",file_name);
+    // printf("Enter the file name:");
+    // scanf(" %[^\n]",file_name);
+    strcpy(file_name,argv[2]);
 
     printf("\n");
     FILE *fp;
