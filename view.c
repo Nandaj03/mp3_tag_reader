@@ -3,6 +3,7 @@
 #include<unistd.h>
 #include "header.h"
 
+//view tag readers functioh
 void view(FILE *fp)
 {
     char tag[5];

@@ -8,7 +8,7 @@ int main(int argc,char *argv[])
     // printf("-v --> view\n");
     // printf("-e --> edit\n");
     // printf("-h --> help\n");
-    if(argc<2)
+    if(argc<2)      //validating cla
     {
         printf("insufficent input\n");
         printf("for view op--> ./a.out -v sample.mp3\n");
@@ -17,7 +17,7 @@ int main(int argc,char *argv[])
         return 0;
     }
     
-    if(strcmp(argv[1],"-h")==0)
+    if(strcmp(argv[1],"-h")==0)     //help details
     {
         printf("-t --> tittle\n");
         printf("-y --> year\n");
@@ -33,7 +33,7 @@ int main(int argc,char *argv[])
         printf("insufficent input\n");
         return 0;
     }
-    if(strstr(argv[2],".mp3")==NULL)
+    if(strstr(argv[2],".mp3")==NULL)    //validating file extension
     {
         printf("Invalid file format\n");
         return 0;
@@ -45,7 +45,7 @@ int main(int argc,char *argv[])
     strcpy(operation,argv[1]);
     // scanf(" %[^\n]",operation);
 
-if(strcmp(operation,"-v")==0)
+if(strcmp(operation,"-v")==0)               //view operation
 {
         // printf("Enter the file name:");
         // scanf(" %[^\n]",file_name);
@@ -68,7 +68,7 @@ if(strcmp(operation,"-v")==0)
         view(fp);
         fclose(fp);
 }
-else if(strcmp(operation,"-e")==0){
+else if(strcmp(operation,"-e")==0){     //edit operation
     char tag[5],info[100];
     printf("Enter the tag:");
     scanf(" %[^\n]",tag);

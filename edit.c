@@ -3,6 +3,7 @@
 #include<unistd.h> 
 #include "header.h"
 
+//editing tag function
 void edit(FILE *fp,char *tag_edit,char *info_edit,char *file_name)
 {
     fseek(fp,0,SEEK_SET);
@@ -63,7 +64,7 @@ void edit(FILE *fp,char *tag_edit,char *info_edit,char *file_name)
         fwrite(buff,1,1,fp2);
     }
 
-    remove(file_name);
+    remove(file_name);              //to change file name
     rename("temp.mp3",file_name);
 
 
